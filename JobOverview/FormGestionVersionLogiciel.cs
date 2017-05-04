@@ -23,7 +23,7 @@ namespace JobOverview
         public FormGestionVersionLogiciel()
         {
             InitializeComponent();
-                       
+
             _VersionAjouté = new List<Version>();
             _VersionSupprimé = new List<Version>();
             _Version = new BindingList<Version>();
@@ -46,6 +46,26 @@ namespace JobOverview
             // On créé un bouton afin d'afficher une fenêtre modale qui nous permettra de rentrer les paramètres nécéssaires à la création d'une nouvelle
             // Version.
             btn_AjoutVersion.Click += Btn_AjoutVersion_Click;
+
+            btn_suppVersion.Click += Btn_suppVersion_Click;
+
+        }
+
+   
+
+        // On créé la méthode qui sera appellée lors du click sur le bouton de suppression de version.
+        private void Btn_suppVersion_Click(object sender, EventArgs e)
+        {
+
+            // On supprime de la liste la version selectionnée.
+            _VersionSupprimé.Remove((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
+            DALLogiciel.SupprimerVersion((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
+            _Version.Remove((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
+            
+
+            // On rafraichi la liste.
+            _Version = DALLogiciel.listVersion((string)cbox_logiciels.SelectedValue);
+            dgv_ModulesVersions.DataSource = _Version;
         }
 
 
@@ -69,7 +89,7 @@ namespace JobOverview
                     _Version = DALLogiciel.listVersion((string)cbox_logiciels.SelectedValue);
                     dgv_ModulesVersions.DataSource = _Version;
 
-                    
+
                 }
 
             }
