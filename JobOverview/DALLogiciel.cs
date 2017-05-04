@@ -176,6 +176,8 @@ namespace JobOverview
         {
             var connectString = Properties.Settings.Default.ProjetWinformsConnection;
 
+
+            // TODO changer la valeur brut GENOMICA pas un parametre prennant le nom du logiciel selectionné dans la combobox.
             string queryString = @"insert jo.Version (NumeroVersion, CodeLogiciel, Millesime, DateOuverture, DateSortiePrevue) 
                                               values (@param1, 'GENOMICA', @param2, @param3, @param4)";
 
@@ -190,7 +192,7 @@ namespace JobOverview
             param3.Value = vers.DateOuvertureVersion;
 
             var param4 = new SqlParameter("@param4", DbType.DateTime);
-            param4.Value = vers.DateOuvertureVersion;
+            param4.Value = vers.DateSortiePrevueVersion;
 
             using (var connect = new SqlConnection(connectString))
             {
@@ -228,10 +230,56 @@ namespace JobOverview
 
             }
 
+        }
+
+
+        public static void SupprimerVersion (Version vers)
+        {
+            var connectString = Properties.Settings.Default.ProjetWinformsConnection;
+
+            string queryString = @"delete from jo.Version where NumeroVersion = @param1";
+
+
+            var param1 = new SqlParameter("@param1", DbType.Int64);
+            param1.Value = vers.NumeroVersion;
+
+         
+            using (var connect = new SqlConnection(connectString))
+            {
+                connect.Open();
+
+                // On ouvre une transaction afin de s'assurer que tous les changements ont été correctement effectués avant de les appliquer définitivement
+                // avec un commit. Si un problème survint, on fait un rollback.
+                SqlTransaction tran = connect.BeginTransaction();
+
+                // Création et execution de la commande.
+                var command = new SqlCommand(queryString, connect, tran);
+
+                command.Parameters.Add(param1);
+               
+
+                try
+                {
+
+                    command.ExecuteNonQuery();
+
+                    // On valide la transaction.
+                    tran.Commit();
+                }
+
+                catch (Exception)
+
+                {
+                    // On ne valide pas la transaction (retour à l'état pré-transaction).
+                    tran.Rollback();
+                    throw;
+                }
+
+
+            }
 
         }
 
- 
     }
 
 }
