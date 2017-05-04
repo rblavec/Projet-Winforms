@@ -12,3 +12,13 @@ D:\Exercices\Projet Winforms\JobOverview\obj\Debug\JobOverview.FormSaisieVersion
 D:\Exercices\Projet-Winforms\JobOverview\bin\Debug\JobOverview.exe.config
 D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.exe
 D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.pdb
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.csprojResolveAssemblyReference.cache
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.FormGestionTachesProduct.resources
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.FormGestionVersionLogiciel.resources
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.FormSaisieTacheProd.resources
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.FormSaisieVersion.resources
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.MDIForm.resources
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.Properties.Resources.resources
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.csproj.GenerateResource.Cache
+D:\Exercices\Projet-Winforms\JobOverview\bin\Debug\JobOverview.exe
+D:\Exercices\Projet-Winforms\JobOverview\bin\Debug\JobOverview.pdb

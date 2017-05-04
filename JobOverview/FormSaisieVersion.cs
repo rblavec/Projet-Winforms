@@ -12,7 +12,7 @@ namespace JobOverview
 {
     public partial class FormSaisieVersion : Form
     {
-        public Logiciel VersionSaisie { get; private set; }
+        public Version VersionSaisie { get; private set; }
 
 
         public FormSaisieVersion()
@@ -25,7 +25,7 @@ namespace JobOverview
         {
             if (this.DialogResult == DialogResult.OK)
             {
-                VersionSaisie = new Logiciel();
+                VersionSaisie = new Version();
                 VersionSaisie.NumeroVersion = Convert.ToInt64(txt_NumeroVersion);
                 VersionSaisie.MillesimeVersion = Convert.ToInt16(txt_millesime);
                 VersionSaisie.DateOuvertureVersion = Convert.ToDateTime(txt_DateOuverture);
