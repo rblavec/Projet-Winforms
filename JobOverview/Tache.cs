@@ -9,7 +9,7 @@ namespace JobOverview
     public class Tache
     {
         #region propriétés
-        public int IdTache { get; set; }
+      
         public string Libelle { get; set; }
         public bool Annexe { get; set; }
         public string CodeActivite { get; set; }

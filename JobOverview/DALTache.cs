@@ -79,7 +79,8 @@ namespace JobOverview
                                 left outer join jo.TacheProd tp on t.IdTache=tp.IdTache
                                 inner join jo.Personne p on t.Login=p.Login
                                 inner join jo.Equipe e on p.CodeEquipe=e.CodeEquipe
-                                where e.Nom='Dev Bio humaine'";
+                                where e.Nom='Dev Bio humaine'
+                                order by t.IdTache";
 
             using (var connect = new SqlConnection(connectString))
             {

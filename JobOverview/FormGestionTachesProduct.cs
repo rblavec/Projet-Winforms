@@ -26,6 +26,12 @@ namespace JobOverview
             InitializeComponent();
             btAjouTache.Click += BtAjouTache_Click;
             _listTachprod = new BindingList<Tache>();
+            dgvTacheProd.CellClick += DgvTacheProd_CellClick;
+        }
+
+        private void DgvTacheProd_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbDescription.Text = ((Tache)dgvTacheProd.CurrentRow.DataBoundItem).Description;
         }
 
         #endregion
@@ -41,20 +47,33 @@ namespace JobOverview
         {
             cbPers.DataSource = DALTache.GetPers().Select(a => a.Login).ToList();
             cbLogiciel.DataSource = DALLogiciel.nomlogiciel();
-            cbVersion.DataSource = DALLogiciel.listVersion();
+           // cbVersion.DataSource = DALLogiciel.GetVers((string)cbLogiciel.SelectedValue);
+            cbVersion.DataSource = DALLogiciel.listVersion((string)cbLogiciel.SelectedValue).Select(a=>a.NumeroVersion).ToList();
 
+            //foreach (var t in _listTach.Where(t => t.Annexe == false))
+            //    _listTachprod.Add(t);
 
-
-
-
+            //dgvTacheProd.DataSource = _listTachprod;
+            
 
             _listTach = DALTache.GetTache();
+            dgvTacheProd.DataSource = _listTach;
+            dgvTacheProd.Columns["Annexe"].Visible = false;
+            dgvTacheProd.Columns["Login"].Visible = false;
+            dgvTacheProd.Columns["NumeroVersion"].Visible = false;
+            dgvTacheProd.Columns["CodeLogicielVersion"].Visible = false;
 
-            foreach (var t in _listTach.Where(t => t.Annexe == true))
-                _listTachprod.Add(t);
 
-            dgvTacheProd.DataSource = _listTachprod;
+            //dgvTacheProd.CurrentRow.DataBoundItem
 
+
+            //.Where(a=>a.NumeroVersion == (float)cbVersion.SelectedValue).ToList();
+
+            //foreach (var t in _listTach.Where(t => t.Annexe == true))
+            //    _listTachprod.Add(t);
+
+            //dgvTacheProd.DataSource = _listTachprod;
+            tbDescription.Text = ((Tache)dgvTacheProd.CurrentRow.DataBoundItem).Description;
 
             base.OnLoad(e);
         }

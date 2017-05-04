@@ -204,17 +204,17 @@ namespace JobOverview
 
                 // Création et execution de la commande.
                 var command = new SqlCommand(queryString, connect, tran);
-              
+
                 command.Parameters.Add(param1);
                 command.Parameters.Add(param2);
                 command.Parameters.Add(param3);
                 command.Parameters.Add(param4);
-  
+
                 try
                 {
-                  
+
                     command.ExecuteNonQuery();
-                 
+
                     // On valide la transaction.
                     tran.Commit();
                 }
@@ -233,7 +233,7 @@ namespace JobOverview
         }
 
 
-        public static void SupprimerVersion (Version vers)
+        public static void SupprimerVersion(Version vers)
         {
             var connectString = Properties.Settings.Default.ProjetWinformsConnection;
 
@@ -243,7 +243,7 @@ namespace JobOverview
             var param1 = new SqlParameter("@param1", DbType.Int64);
             param1.Value = vers.NumeroVersion;
 
-         
+
             using (var connect = new SqlConnection(connectString))
             {
                 connect.Open();
@@ -256,7 +256,7 @@ namespace JobOverview
                 var command = new SqlCommand(queryString, connect, tran);
 
                 command.Parameters.Add(param1);
-               
+
 
                 try
                 {
@@ -277,9 +277,43 @@ namespace JobOverview
 
 
             }
+        }
+
+        ///recupération des versions pour le logiciel transmis en paramètre
+        public static List<float> GetVers(string log)
+        {
+            List<float> listVers = new List<float>();
+
+            var connectString = Properties.Settings.Default.ProjetWinformsConnection;
+            string queryString = @"select NumeroVersion
+                                    from jo.Version where CodeLogiciel=@log";
+            var param1 = new SqlParameter("@log", DbType.Int64);
+            param1.Value = log;
+
+            using (var connect = new SqlConnection(connectString))
+            {
+                var command = new SqlCommand(queryString, connect);
+                command.Parameters.Add(param1);
+                connect.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        listVers.Add((float)reader["NumeroVersion"]);
+                    }
+                }
+            }
+
+            return listVers;
+
 
         }
+
+
 
     }
 
 }
+
+
