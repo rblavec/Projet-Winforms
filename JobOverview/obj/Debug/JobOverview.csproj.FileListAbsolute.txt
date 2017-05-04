@@ -25,3 +25,13 @@ D:\Exercices\Projet-Winforms\JobOverview\bin\Debug\JobOverview.pdb
 D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\bin\Debug\JobOverview.exe.config
 D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.exe
 D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.pdb
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\bin\Debug\JobOverview.exe
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\bin\Debug\JobOverview.pdb
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.csprojResolveAssemblyReference.cache
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.FormGestionTachesProduct.resources
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.FormGestionVersionLogiciel.resources
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.FormSaisieTacheProd.resources
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.FormSaisieVersion.resources
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.MDIForm.resources
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.Properties.Resources.resources
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.csproj.GenerateResource.Cache

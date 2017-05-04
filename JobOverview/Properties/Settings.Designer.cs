@@ -26,8 +26,8 @@ namespace JobOverview.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RBLAVEC17-DE\\IP08R2;Initial Catalog=\"Projet Winforms\";Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=YCAPPELLE17-DE\\IP08R2;Initial Catalog=\"Projet Winforms\";Integrated Se" +
+            "curity=True")]
         public string ProjetWinformsConnection {
             get {
                 return ((string)(this["ProjetWinformsConnection"]));
