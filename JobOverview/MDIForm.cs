@@ -16,7 +16,8 @@ namespace JobOverview
 
             // TODO : Branchement des menus
             menuGestionVersionLogiciels.Click += (object sender, EventArgs e) => ShowChild("JobOverview.FormGestionVersionLogiciel");
-           gestionDesTachesProductionToolStripMenuItem .Click += (object sender, EventArgs e) => ShowChild("JobOverview.FormGestionTachesProduct");
+           gestionDesTachesProductionToolStripMenuItem.Click += (object sender, EventArgs e) => ShowChild("JobOverview.FormGestionTachesProduct");
+            gestionDesTachesAnnexesToolStripMenuItem.Click += (object sender, EventArgs e) => ShowChild("JobOverview.FormGestionTachesAnnexe");
 
         }
 

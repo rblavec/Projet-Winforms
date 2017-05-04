@@ -15,6 +15,8 @@ namespace JobOverview
         public FormGestionTachesAnnexe()
         {
             InitializeComponent();
+
+            cbox_listePersonne.DataSource = DALTache.GetPers().Select(a => a.Login).ToList();
         }
     }
 }
