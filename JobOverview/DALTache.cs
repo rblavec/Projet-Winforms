@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,7 @@ namespace JobOverview
                 {
                     while (reader.Read())
                     {
-                        GetCommandeFromDataReader(listPers, reader);
+                        GetPersonneFromDataReader(listPers, reader);
                     }
                 }
             }
@@ -39,10 +40,10 @@ namespace JobOverview
 
 
         }
-        private static void GetCommandeFromDataReader(List<Personne> listCom, SqlDataReader reader)
+        private static void GetPersonneFromDataReader(List<Personne> listPers, SqlDataReader reader)
         {
 
-            //todo controle valeurs null à finir
+
             var pers = new Personne();
 
             pers.Login = (string)reader["Login"];
@@ -60,10 +61,83 @@ namespace JobOverview
 
             pers.TauxProductivite = (float)reader["TauxProductivite"];
 
-            listCom.Add(pers);
+            listPers.Add(pers);
 
         }
 
-        
+        ////////////////////////////////////////////////////////////////////////
+        ///récupération des taches de l'équipe Dev Bio humaine
+        /////////////////////////////////////////////////////////////////////////
+        public static BindingList<Tache> GetTache()
+        {
+            BindingList<Tache> listTache = new BindingList<Tache>();
+
+            var connectString = Properties.Settings.Default.ProjetWinformsConnection;
+            string queryString = @"select t.Libelle,t.Annexe,t.CodeActivite,t.Login,t.Description,tp.Numero,tp.DureePrevue,tp.DureeRestanteEstimee,
+			                	tp.CodeModule,tp.CodeLogicieModule,tp.NumeroVersion,tp.CodeLogicielVersion
+                                from jo.Tache t
+                                left outer join jo.TacheProd tp on t.IdTache=tp.IdTache
+                                inner join jo.Personne p on t.Login=p.Login
+                                inner join jo.Equipe e on p.CodeEquipe=e.CodeEquipe
+                                where e.Nom='Dev Bio humaine'";
+
+            using (var connect = new SqlConnection(connectString))
+            {
+                var command = new SqlCommand(queryString, connect);
+
+                connect.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        GetTacheFromDataReader(listTache, reader);
+                    }
+                }
+            }
+
+            return listTache;
+        }
+
+        private static void GetTacheFromDataReader(BindingList<Tache> listTache, SqlDataReader reader)
+        {
+
+            //todo controle valeurs null à finir
+            var tach = new Tache();
+
+
+            if (reader["Libelle"] != DBNull.Value)
+                tach.Libelle = (string)reader["Libelle"];
+            if (reader["Annexe"] != DBNull.Value)
+                tach.Annexe = (bool)reader["Annexe"];
+            if (reader["CodeActivite"] != DBNull.Value)
+                tach.CodeActivite = (string)reader["CodeActivite"];
+            if (reader["Login"] != DBNull.Value)
+                tach.Login = (string)reader["Login"];
+            tach.Description = (string)reader["Description"];
+            if (reader["Numero"] != DBNull.Value)
+                tach.Numero = (int)reader["Numero"];
+            if (reader["DureePrevue"] != DBNull.Value)
+                tach.DureePrevue = (float)reader["DureePrevue"];
+
+            if (reader["DureeRestanteEstimee"] != DBNull.Value)
+                tach.DureeRestanteEstimee = (float)reader["DureeRestanteEstimee"];
+
+            if (reader["CodeModule"] != DBNull.Value)
+                tach.CodeModule = (string)reader["CodeModule"];
+
+            if (reader["CodeLogicieModule"] != DBNull.Value)
+                tach.CodeLogicieModule = (string)reader["CodeLogicieModule"];
+
+            if (reader["NumeroVersion"] != DBNull.Value)
+                tach.NumeroVersion = (float)reader["NumeroVersion"];
+
+            if (reader["CodeLogicielVersion"] != DBNull.Value)
+                tach.CodeLogicielVersion = (string)reader["CodeLogicielVersion"];
+
+
+            listTache.Add(tach);
+
+        }
     }
 }

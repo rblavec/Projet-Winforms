@@ -30,9 +30,11 @@
 		{
             this.menuGeneral = new System.Windows.Forms.MenuStrip();
             this.menuGestionVersionLogiciels = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesVersionsDeLogicielsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GestionTache = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindows = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesTachesProductionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesTachesAnnexesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,7 @@
             // 
             this.menuGeneral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuGestionVersionLogiciels,
-            this.menu2,
+            this.GestionTache,
             this.menuWindows});
             this.menuGeneral.Location = new System.Drawing.Point(0, 0);
             this.menuGeneral.Name = "menuGeneral";
@@ -56,11 +58,19 @@
             this.menuGestionVersionLogiciels.Size = new System.Drawing.Size(188, 20);
             this.menuGestionVersionLogiciels.Text = "Gestion des versions de logiciels";
             // 
-            // menu2
+            // gestionDesVersionsDeLogicielsToolStripMenuItem
             // 
-            this.menu2.Name = "menu2";
-            this.menu2.Size = new System.Drawing.Size(56, 20);
-            this.menu2.Text = "Menu2";
+            this.gestionDesVersionsDeLogicielsToolStripMenuItem.Name = "gestionDesVersionsDeLogicielsToolStripMenuItem";
+            this.gestionDesVersionsDeLogicielsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            // 
+            // GestionTache
+            // 
+            this.GestionTache.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDesTachesProductionToolStripMenuItem,
+            this.gestionDesTachesAnnexesToolStripMenuItem});
+            this.GestionTache.Name = "GestionTache";
+            this.GestionTache.Size = new System.Drawing.Size(119, 20);
+            this.GestionTache.Text = "Gestion des Taches";
             // 
             // menuWindows
             // 
@@ -68,10 +78,17 @@
             this.menuWindows.Size = new System.Drawing.Size(63, 20);
             this.menuWindows.Text = "Fenêtres";
             // 
-            // gestionDesVersionsDeLogicielsToolStripMenuItem
+            // gestionDesTachesProductionToolStripMenuItem
             // 
-            this.gestionDesVersionsDeLogicielsToolStripMenuItem.Name = "gestionDesVersionsDeLogicielsToolStripMenuItem";
-            this.gestionDesVersionsDeLogicielsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gestionDesTachesProductionToolStripMenuItem.Name = "gestionDesTachesProductionToolStripMenuItem";
+            this.gestionDesTachesProductionToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.gestionDesTachesProductionToolStripMenuItem.Text = "Gestion des Taches Production";
+            // 
+            // gestionDesTachesAnnexesToolStripMenuItem
+            // 
+            this.gestionDesTachesAnnexesToolStripMenuItem.Name = "gestionDesTachesAnnexesToolStripMenuItem";
+            this.gestionDesTachesAnnexesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.gestionDesTachesAnnexesToolStripMenuItem.Text = "Gestion des Taches Annexes";
             // 
             // MDIForm
             // 
@@ -95,8 +112,10 @@
 		private System.Windows.Forms.MenuStrip menuGeneral;
 		private System.Windows.Forms.ToolStripMenuItem menuGestionVersionLogiciels;
 		private System.Windows.Forms.ToolStripMenuItem menuWindows;
-		private System.Windows.Forms.ToolStripMenuItem menu2;
+		private System.Windows.Forms.ToolStripMenuItem GestionTache;
         private System.Windows.Forms.ToolStripMenuItem gestionDesVersionsDeLogicielsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesTachesProductionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesTachesAnnexesToolStripMenuItem;
     }
 }
 
