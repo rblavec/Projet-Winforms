@@ -22,3 +22,6 @@ D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.Properties.Resour
 D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.csproj.GenerateResource.Cache
 D:\Exercices\Projet-Winforms\JobOverview\bin\Debug\JobOverview.exe
 D:\Exercices\Projet-Winforms\JobOverview\bin\Debug\JobOverview.pdb
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\bin\Debug\JobOverview.exe.config
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.exe
+D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.pdb
