@@ -24,8 +24,8 @@ namespace JobOverview
             // On écrit la requête SQL à exécuter
             string queryString = @"select distinct v.NumeroVersion, v.Millesime, v.DateOuverture, v.DateSortiePrevue, v.DateSortieReelle, MAX(r.NumeroRelease) [Last release]
                                  from jo.Version v
-                                 inner join jo.Release r on r.NumeroVersion = v.NumeroVersion
-                                 inner join jo.Logiciel l on l.CodeLogiciel = v.CodeLogiciel
+                                 left outer join jo.Release r on r.NumeroVersion = v.NumeroVersion
+                                 left outer join jo.Logiciel l on l.CodeLogiciel = v.CodeLogiciel
                                  where l.Nom = @parametre
                                  group by v.NumeroVersion, v.Millesime, v.DateOuverture, v.DateSortiePrevue, v.DateSortieReelle";
 
