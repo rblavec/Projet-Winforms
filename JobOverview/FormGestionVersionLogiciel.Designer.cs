@@ -54,7 +54,7 @@
             this.dgv_ModulesVersions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ModulesVersions.Location = new System.Drawing.Point(12, 274);
             this.dgv_ModulesVersions.Name = "dgv_ModulesVersions";
-            this.dgv_ModulesVersions.Size = new System.Drawing.Size(438, 126);
+            this.dgv_ModulesVersions.Size = new System.Drawing.Size(561, 126);
             this.dgv_ModulesVersions.TabIndex = 1;
             // 
             // btn_AjoutVersion
@@ -68,7 +68,7 @@
             // 
             // btn_suppVersion
             // 
-            this.btn_suppVersion.Location = new System.Drawing.Point(341, 417);
+            this.btn_suppVersion.Location = new System.Drawing.Point(464, 417);
             this.btn_suppVersion.Name = "btn_suppVersion";
             this.btn_suppVersion.Size = new System.Drawing.Size(109, 23);
             this.btn_suppVersion.TabIndex = 3;
@@ -82,7 +82,7 @@
             this.dgv_modules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_modules.Location = new System.Drawing.Point(12, 97);
             this.dgv_modules.Name = "dgv_modules";
-            this.dgv_modules.Size = new System.Drawing.Size(438, 126);
+            this.dgv_modules.Size = new System.Drawing.Size(561, 126);
             this.dgv_modules.TabIndex = 4;
             // 
             // label1
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 461);
+            this.ClientSize = new System.Drawing.Size(611, 461);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

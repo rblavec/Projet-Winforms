@@ -35,3 +35,4 @@ D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\De
 D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.MDIForm.resources
 D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.Properties.Resources.resources
 D:\ycappelle\exercices\projet_winforms\projet_winforms_commun\JobOverview\obj\Debug\JobOverview.csproj.GenerateResource.Cache
+D:\Exercices\Projet-Winforms\JobOverview\obj\Debug\JobOverview.FormGestionTachesAnnexe.resources

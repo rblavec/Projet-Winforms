@@ -32,12 +32,12 @@
             this.btn_Annuler = new System.Windows.Forms.Button();
             this.txt_NumeroVersion = new System.Windows.Forms.TextBox();
             this.txt_millesime = new System.Windows.Forms.TextBox();
-            this.txt_DateSortiePrevue = new System.Windows.Forms.TextBox();
-            this.txt_DateOuverture = new System.Windows.Forms.TextBox();
             this.txt_version = new System.Windows.Forms.Label();
             this.lbl_Millesime = new System.Windows.Forms.Label();
             this.lbl_DateOuverture = new System.Windows.Forms.Label();
             this.lbl_datePrevue = new System.Windows.Forms.Label();
+            this.txt_DateOuverture = new System.Windows.Forms.MaskedTextBox();
+            this.txt_DateSortiePrevue = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btn_OK
@@ -73,20 +73,6 @@
             this.txt_millesime.Name = "txt_millesime";
             this.txt_millesime.Size = new System.Drawing.Size(122, 20);
             this.txt_millesime.TabIndex = 1;
-            // 
-            // txt_DateSortiePrevue
-            // 
-            this.txt_DateSortiePrevue.Location = new System.Drawing.Point(133, 145);
-            this.txt_DateSortiePrevue.Name = "txt_DateSortiePrevue";
-            this.txt_DateSortiePrevue.Size = new System.Drawing.Size(122, 20);
-            this.txt_DateSortiePrevue.TabIndex = 1;
-            // 
-            // txt_DateOuverture
-            // 
-            this.txt_DateOuverture.Location = new System.Drawing.Point(133, 103);
-            this.txt_DateOuverture.Name = "txt_DateOuverture";
-            this.txt_DateOuverture.Size = new System.Drawing.Size(122, 20);
-            this.txt_DateOuverture.TabIndex = 1;
             // 
             // txt_version
             // 
@@ -124,6 +110,24 @@
             this.lbl_datePrevue.TabIndex = 2;
             this.lbl_datePrevue.Text = "Date de sortie prévue";
             // 
+            // txt_DateOuverture
+            // 
+            this.txt_DateOuverture.Location = new System.Drawing.Point(133, 103);
+            this.txt_DateOuverture.Mask = "00/00/0000";
+            this.txt_DateOuverture.Name = "txt_DateOuverture";
+            this.txt_DateOuverture.Size = new System.Drawing.Size(122, 20);
+            this.txt_DateOuverture.TabIndex = 3;
+            this.txt_DateOuverture.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_DateSortiePrevue
+            // 
+            this.txt_DateSortiePrevue.Location = new System.Drawing.Point(132, 152);
+            this.txt_DateSortiePrevue.Mask = "00/00/0000";
+            this.txt_DateSortiePrevue.Name = "txt_DateSortiePrevue";
+            this.txt_DateSortiePrevue.Size = new System.Drawing.Size(123, 20);
+            this.txt_DateSortiePrevue.TabIndex = 4;
+            this.txt_DateSortiePrevue.ValidatingType = typeof(System.DateTime);
+            // 
             // FormSaisieVersion
             // 
             this.AcceptButton = this.btn_OK;
@@ -133,12 +137,12 @@
             this.CancelButton = this.btn_Annuler;
             this.ClientSize = new System.Drawing.Size(344, 259);
             this.ControlBox = false;
+            this.Controls.Add(this.txt_DateSortiePrevue);
+            this.Controls.Add(this.txt_DateOuverture);
             this.Controls.Add(this.lbl_datePrevue);
             this.Controls.Add(this.lbl_DateOuverture);
             this.Controls.Add(this.lbl_Millesime);
             this.Controls.Add(this.txt_version);
-            this.Controls.Add(this.txt_DateSortiePrevue);
-            this.Controls.Add(this.txt_DateOuverture);
             this.Controls.Add(this.txt_millesime);
             this.Controls.Add(this.txt_NumeroVersion);
             this.Controls.Add(this.btn_Annuler);
@@ -157,11 +161,11 @@
         private System.Windows.Forms.Button btn_Annuler;
         private System.Windows.Forms.TextBox txt_NumeroVersion;
         private System.Windows.Forms.TextBox txt_millesime;
-        private System.Windows.Forms.TextBox txt_DateSortiePrevue;
-        private System.Windows.Forms.TextBox txt_DateOuverture;
         private System.Windows.Forms.Label txt_version;
         private System.Windows.Forms.Label lbl_Millesime;
         private System.Windows.Forms.Label lbl_DateOuverture;
         private System.Windows.Forms.Label lbl_datePrevue;
+        private System.Windows.Forms.MaskedTextBox txt_DateOuverture;
+        private System.Windows.Forms.MaskedTextBox txt_DateSortiePrevue;
     }
 }

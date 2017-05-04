@@ -41,7 +41,7 @@ namespace JobOverview
         {
             cbPers.DataSource = DALTache.GetPers().Select(a => a.Login).ToList();
             cbLogiciel.DataSource = DALLogiciel.nomlogiciel();
-            cbVersion.DataSource = DALLogiciel.listVersion();
+            //cbVersion.DataSource = DALLogiciel.listVersion();
 
 
 
