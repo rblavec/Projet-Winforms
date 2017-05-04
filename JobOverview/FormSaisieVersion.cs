@@ -26,10 +26,10 @@ namespace JobOverview
             if (this.DialogResult == DialogResult.OK)
             {
                 VersionSaisie = new Version();
-                VersionSaisie.NumeroVersion = Convert.ToInt64(txt_NumeroVersion);
-                VersionSaisie.MillesimeVersion = Convert.ToInt16(txt_millesime);
-                VersionSaisie.DateOuvertureVersion = Convert.ToDateTime(txt_DateOuverture);
-                VersionSaisie.DateSortiePrevueVersion = Convert.ToDateTime(txt_DateSortiePrevue);
+                VersionSaisie.NumeroVersion = Convert.ToInt64(txt_NumeroVersion.Text);
+                VersionSaisie.MillesimeVersion = Convert.ToInt16(txt_millesime.Text);
+                VersionSaisie.DateOuvertureVersion = Convert.ToDateTime(txt_DateOuverture.Text);
+                VersionSaisie.DateSortiePrevueVersion = Convert.ToDateTime(txt_DateSortiePrevue.Text);
             }
 
             base.OnClosing(e);

@@ -8,7 +8,6 @@ namespace JobOverview
 {
    public class Version
     {
-        public Int16 NumeroRelease { get; set; }
 
         public float NumeroVersion { get; set; }
 
@@ -20,5 +19,6 @@ namespace JobOverview
 
         public DateTime DateSortieReelleVersion { get; set; }
 
+        public Int16 NumeroRelease { get; set; }
     }
 }

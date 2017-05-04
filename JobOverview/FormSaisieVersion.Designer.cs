@@ -31,13 +31,13 @@
             this.btn_OK = new System.Windows.Forms.Button();
             this.btn_Annuler = new System.Windows.Forms.Button();
             this.txt_NumeroVersion = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_millesime = new System.Windows.Forms.TextBox();
+            this.txt_DateSortiePrevue = new System.Windows.Forms.TextBox();
+            this.txt_DateOuverture = new System.Windows.Forms.TextBox();
             this.txt_version = new System.Windows.Forms.Label();
-            this.txt_millesime = new System.Windows.Forms.Label();
-            this.txt_DateOuverture = new System.Windows.Forms.Label();
-            this.txt_DateSortiePrevue = new System.Windows.Forms.Label();
+            this.lbl_Millesime = new System.Windows.Forms.Label();
+            this.lbl_DateOuverture = new System.Windows.Forms.Label();
+            this.lbl_datePrevue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_OK
@@ -67,26 +67,26 @@
             this.txt_NumeroVersion.Size = new System.Drawing.Size(190, 20);
             this.txt_NumeroVersion.TabIndex = 1;
             // 
-            // textBox2
+            // txt_millesime
             // 
-            this.textBox2.Location = new System.Drawing.Point(133, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 20);
-            this.textBox2.TabIndex = 1;
+            this.txt_millesime.Location = new System.Drawing.Point(133, 59);
+            this.txt_millesime.Name = "txt_millesime";
+            this.txt_millesime.Size = new System.Drawing.Size(122, 20);
+            this.txt_millesime.TabIndex = 1;
             // 
-            // textBox3
+            // txt_DateSortiePrevue
             // 
-            this.textBox3.Location = new System.Drawing.Point(133, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 20);
-            this.textBox3.TabIndex = 1;
+            this.txt_DateSortiePrevue.Location = new System.Drawing.Point(133, 145);
+            this.txt_DateSortiePrevue.Name = "txt_DateSortiePrevue";
+            this.txt_DateSortiePrevue.Size = new System.Drawing.Size(122, 20);
+            this.txt_DateSortiePrevue.TabIndex = 1;
             // 
-            // textBox4
+            // txt_DateOuverture
             // 
-            this.textBox4.Location = new System.Drawing.Point(133, 103);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(122, 20);
-            this.textBox4.TabIndex = 1;
+            this.txt_DateOuverture.Location = new System.Drawing.Point(133, 103);
+            this.txt_DateOuverture.Name = "txt_DateOuverture";
+            this.txt_DateOuverture.Size = new System.Drawing.Size(122, 20);
+            this.txt_DateOuverture.TabIndex = 1;
             // 
             // txt_version
             // 
@@ -97,32 +97,32 @@
             this.txt_version.TabIndex = 2;
             this.txt_version.Text = "Numéro de la Version";
             // 
-            // txt_millesime
+            // lbl_Millesime
             // 
-            this.txt_millesime.AutoSize = true;
-            this.txt_millesime.Location = new System.Drawing.Point(72, 66);
-            this.txt_millesime.Name = "txt_millesime";
-            this.txt_millesime.Size = new System.Drawing.Size(49, 13);
-            this.txt_millesime.TabIndex = 2;
-            this.txt_millesime.Text = "Millesime";
+            this.lbl_Millesime.AutoSize = true;
+            this.lbl_Millesime.Location = new System.Drawing.Point(72, 66);
+            this.lbl_Millesime.Name = "lbl_Millesime";
+            this.lbl_Millesime.Size = new System.Drawing.Size(49, 13);
+            this.lbl_Millesime.TabIndex = 2;
+            this.lbl_Millesime.Text = "Millesime";
             // 
-            // txt_DateOuverture
+            // lbl_DateOuverture
             // 
-            this.txt_DateOuverture.AutoSize = true;
-            this.txt_DateOuverture.Location = new System.Drawing.Point(35, 110);
-            this.txt_DateOuverture.Name = "txt_DateOuverture";
-            this.txt_DateOuverture.Size = new System.Drawing.Size(86, 13);
-            this.txt_DateOuverture.TabIndex = 2;
-            this.txt_DateOuverture.Text = "Date d\'ouverture";
+            this.lbl_DateOuverture.AutoSize = true;
+            this.lbl_DateOuverture.Location = new System.Drawing.Point(35, 110);
+            this.lbl_DateOuverture.Name = "lbl_DateOuverture";
+            this.lbl_DateOuverture.Size = new System.Drawing.Size(86, 13);
+            this.lbl_DateOuverture.TabIndex = 2;
+            this.lbl_DateOuverture.Text = "Date d\'ouverture";
             // 
-            // txt_DateSortiePrevue
+            // lbl_datePrevue
             // 
-            this.txt_DateSortiePrevue.AutoSize = true;
-            this.txt_DateSortiePrevue.Location = new System.Drawing.Point(13, 152);
-            this.txt_DateSortiePrevue.Name = "txt_DateSortiePrevue";
-            this.txt_DateSortiePrevue.Size = new System.Drawing.Size(109, 13);
-            this.txt_DateSortiePrevue.TabIndex = 2;
-            this.txt_DateSortiePrevue.Text = "Date de sortie prévue";
+            this.lbl_datePrevue.AutoSize = true;
+            this.lbl_datePrevue.Location = new System.Drawing.Point(13, 152);
+            this.lbl_datePrevue.Name = "lbl_datePrevue";
+            this.lbl_datePrevue.Size = new System.Drawing.Size(109, 13);
+            this.lbl_datePrevue.TabIndex = 2;
+            this.lbl_datePrevue.Text = "Date de sortie prévue";
             // 
             // FormSaisieVersion
             // 
@@ -133,13 +133,13 @@
             this.CancelButton = this.btn_Annuler;
             this.ClientSize = new System.Drawing.Size(344, 259);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_datePrevue);
+            this.Controls.Add(this.lbl_DateOuverture);
+            this.Controls.Add(this.lbl_Millesime);
+            this.Controls.Add(this.txt_version);
             this.Controls.Add(this.txt_DateSortiePrevue);
             this.Controls.Add(this.txt_DateOuverture);
             this.Controls.Add(this.txt_millesime);
-            this.Controls.Add(this.txt_version);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.txt_NumeroVersion);
             this.Controls.Add(this.btn_Annuler);
             this.Controls.Add(this.btn_OK);
@@ -156,12 +156,12 @@
         private System.Windows.Forms.Button btn_OK;
         private System.Windows.Forms.Button btn_Annuler;
         private System.Windows.Forms.TextBox txt_NumeroVersion;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_millesime;
+        private System.Windows.Forms.TextBox txt_DateSortiePrevue;
+        private System.Windows.Forms.TextBox txt_DateOuverture;
         private System.Windows.Forms.Label txt_version;
-        private System.Windows.Forms.Label txt_millesime;
-        private System.Windows.Forms.Label txt_DateOuverture;
-        private System.Windows.Forms.Label txt_DateSortiePrevue;
+        private System.Windows.Forms.Label lbl_Millesime;
+        private System.Windows.Forms.Label lbl_DateOuverture;
+        private System.Windows.Forms.Label lbl_datePrevue;
     }
 }
