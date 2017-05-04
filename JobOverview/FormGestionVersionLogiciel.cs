@@ -61,7 +61,7 @@ namespace JobOverview
             _VersionSupprimé.Remove((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
             DALLogiciel.SupprimerVersion((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
             _Version.Remove((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
-
+            
 
             // On rafraichi la liste.
             _Version = DALLogiciel.listVersion((string)cbox_logiciels.SelectedValue);
