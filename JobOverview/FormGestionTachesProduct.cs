@@ -30,15 +30,29 @@ namespace JobOverview
             cbPers.SelectedValueChanged += CbPers_SelectedValueChanged;
             cbLogiciel.SelectedValueChanged += CbPers_SelectedValueChanged;
             cbVersion.SelectedValueChanged += CbPers_SelectedValueChanged;
+            chk_termine.CheckedChanged += CbPers_SelectedValueChanged;
         }
 
         private void CbPers_SelectedValueChanged(object sender, EventArgs e)
         {
             // On filtre la DataGridView en fonction du nom du logiciel, du Login et de la version.
             // Nous appliquons également un filtre pour n'obtenir que les taches de productions.  
-            // Ici, nous rafraichissons la DataGridView à chaque changement de valeur dans une des comboBox.    
-            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem) 
-            && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false).ToList();
+            // Ici, nous rafraichissons la DataGridView à chaque changement de valeur dans une des comboBox. 
+            // On place une checkedBox afin de filtrer les taches de productions terminées, 
+            // c'est à dire les taches dont les temps restant est estimé à 0 ou différent de 0.
+            // La checkedBox est non cochée par défault.
+            if (chk_termine.Checked)
+            {
+                dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)
+                           && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false && c.DureeRestanteEstimee == 0).ToList();
+            }
+            else
+            {
+
+                dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)
+            && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false && c.DureeRestanteEstimee != 0).ToList();
+            }
+
         }
 
         private void DgvTacheProd_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -60,20 +74,32 @@ namespace JobOverview
         {
             cbPers.DataSource = DALTache.GetPers().Select(a => a.Login).ToList();
             cbLogiciel.DataSource = DALLogiciel.Codelogiciel();
-          
+
             cbVersion.DataSource = DALLogiciel.listVersion((string)cbLogiciel.SelectedValue).Select(a => a.NumeroVersion).ToList();
 
-          
+
             foreach (var a in DALTache.GetTache())
             {
                 _listTachprod.Add(a);
             }
-            
-            
+
+
             // On filtre la DataGridView en fonction du nom du logiciel, du Login et de la version.
-            // Nous appliquons également un filtre pour n'obtenir que les taches de productions.               
-            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem) 
-            && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false).ToList();
+            // Nous appliquons également un filtre pour n'obtenir que les taches de productions.  
+            // On place une checkedBox afin de filtrer les taches de productions terminées,
+            // c'est à dire les taches dont les temps restant est estimé à 0 ou différent de 0.
+            // La checkedBox est non cochée par défault.             
+            if (chk_termine.Checked)
+            {
+                dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)
+                           && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false && c.DureeRestanteEstimee == 0).ToList();
+            }
+            else
+            {
+                
+                dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)
+            && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false && c.DureeRestanteEstimee != 0).ToList();
+            }
 
 
             // On rend invisible les colonnes qui ne sont pas necessaire afin de rendre disponible un maximum 

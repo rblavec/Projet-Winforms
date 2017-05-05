@@ -37,6 +37,7 @@
             this.Logiciel = new System.Windows.Forms.Label();
             this.Version = new System.Windows.Forms.Label();
             this.tbDescription = new System.Windows.Forms.TextBox();
+            this.chk_termine = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTacheProd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             // dgvTacheProd
             // 
             this.dgvTacheProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTacheProd.Location = new System.Drawing.Point(12, 95);
+            this.dgvTacheProd.Location = new System.Drawing.Point(12, 129);
             this.dgvTacheProd.Name = "dgvTacheProd";
             this.dgvTacheProd.Size = new System.Drawing.Size(639, 246);
             this.dgvTacheProd.TabIndex = 3;
@@ -120,11 +121,21 @@
             this.tbDescription.Size = new System.Drawing.Size(245, 23);
             this.tbDescription.TabIndex = 8;
             // 
+            // chk_termine
+            // 
+            this.chk_termine.Location = new System.Drawing.Point(12, 94);
+            this.chk_termine.Name = "chk_termine";
+            this.chk_termine.Size = new System.Drawing.Size(111, 17);
+            this.chk_termine.TabIndex = 0;
+            this.chk_termine.Text = "Tâches terminées";
+            this.chk_termine.UseVisualStyleBackColor = true;
+            // 
             // FormGestionTachesProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 496);
+            this.Controls.Add(this.chk_termine);
             this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.Version);
             this.Controls.Add(this.Logiciel);
@@ -153,5 +164,6 @@
         private System.Windows.Forms.Label Logiciel;
         private System.Windows.Forms.Label Version;
         private System.Windows.Forms.TextBox tbDescription;
+        private System.Windows.Forms.CheckBox chk_termine;
     }
 }
