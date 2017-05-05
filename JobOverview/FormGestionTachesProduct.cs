@@ -34,12 +34,16 @@ namespace JobOverview
 
         private void CbPers_SelectedValueChanged(object sender, EventArgs e)
         {
-            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)).ToList();
+            // On filtre la DataGridView en fonction du nom du logiciel, du Login et de la version.
+            // Nous appliquons également un filtre pour n'obtenir que les taches de productions.  
+            // Ici, nous rafraichissons la DataGridView à chaque changement de valeur dans une des comboBox.    
+            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem) 
+            && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false).ToList();
         }
 
         private void DgvTacheProd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // On souhaite afficher la description de la tache selectionnée dans une textBox. 
             tbDescription.Text = ((Tache)dgvTacheProd.CurrentRow.DataBoundItem).Description;
         }
 
@@ -56,30 +60,30 @@ namespace JobOverview
         {
             cbPers.DataSource = DALTache.GetPers().Select(a => a.Login).ToList();
             cbLogiciel.DataSource = DALLogiciel.Codelogiciel();
-            // cbVersion.DataSource = DALLogiciel.GetVers((string)cbLogiciel.SelectedValue);
+          
             cbVersion.DataSource = DALLogiciel.listVersion((string)cbLogiciel.SelectedValue).Select(a => a.NumeroVersion).ToList();
 
-            //foreach (var t in _listTach.Where(t => t.Annexe == false))
-            //    _listTachprod.Add(t);
-
-            //dgvTacheProd.DataSource = _listTachprod;
-
-
-
+          
             foreach (var a in DALTache.GetTache())
             {
                 _listTachprod.Add(a);
             }
+            
+            
+            // On filtre la DataGridView en fonction du nom du logiciel, du Login et de la version.
+            // Nous appliquons également un filtre pour n'obtenir que les taches de productions.               
+            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem) 
+            && c.NumeroVersion == ((float)cbVersion.SelectedItem) && c.Annexe == false).ToList();
 
 
-            //dgvTacheProd.DataSource = _listTachprod;
-            //dgvTacheProd.DataSource = ((((_listTachprod.Where((c=>c.Login == cbPers.Text))).Where(d => d.CodeLogicieModule == cbLogiciel.Text)).Where( g =>g.NumeroVersion.ToString() == cbVersion.Text)));
-            //dgvTacheProd.DataSource = ((_listTachprod.Where(m => m.Login == cbPers.SelectedValue.ToString())).Where(n => n.CodeLogicieModule == cbLogiciel.SelectedValue)).ToList();
-            //.Where(g => g.NumeroVersion == (float)cbVersion.SelectedValue).ToList();
-            //dgvTacheProd.Columns["Login"].Visible = false;
-            //dgvTacheProd.Columns["NumeroVersion"].Visible = false;
-            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)).ToList();
-            //&& c.NumeroVersion == ((float)cbVersion.SelectedItem)
+            // On rend invisible les colonnes qui ne sont pas necessaire afin de rendre disponible un maximum 
+            // d'informations utile en limitant la largeur de la DataGridView.
+            dgvTacheProd.Columns["Numero"].Visible = false;
+            dgvTacheProd.Columns["IdTache"].Visible = false;
+            dgvTacheProd.Columns["Annexe"].Visible = false;
+            dgvTacheProd.Columns["login"].Visible = false;
+            dgvTacheProd.Columns["NumeroVersion"].Visible = false;
+            dgvTacheProd.Columns["Description"].Visible = false;
 
             //dgvTacheProd.CurrentRow.DataBoundItem
 

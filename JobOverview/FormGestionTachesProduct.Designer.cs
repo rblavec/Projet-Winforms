@@ -55,13 +55,13 @@
             this.cbPers.FormattingEnabled = true;
             this.cbPers.Location = new System.Drawing.Point(12, 50);
             this.cbPers.Name = "cbPers";
-            this.cbPers.Size = new System.Drawing.Size(121, 21);
+            this.cbPers.Size = new System.Drawing.Size(169, 21);
             this.cbPers.TabIndex = 1;
             // 
             // btAjouTache
             // 
             this.btAjouTache.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAjouTache.Location = new System.Drawing.Point(12, 504);
+            this.btAjouTache.Location = new System.Drawing.Point(12, 451);
             this.btAjouTache.Name = "btAjouTache";
             this.btAjouTache.Size = new System.Drawing.Size(137, 23);
             this.btAjouTache.TabIndex = 2;
@@ -71,32 +71,32 @@
             // dgvTacheProd
             // 
             this.dgvTacheProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTacheProd.Location = new System.Drawing.Point(12, 197);
+            this.dgvTacheProd.Location = new System.Drawing.Point(12, 95);
             this.dgvTacheProd.Name = "dgvTacheProd";
-            this.dgvTacheProd.Size = new System.Drawing.Size(755, 260);
+            this.dgvTacheProd.Size = new System.Drawing.Size(639, 246);
             this.dgvTacheProd.TabIndex = 3;
             // 
             // cbLogiciel
             // 
             this.cbLogiciel.FormattingEnabled = true;
-            this.cbLogiciel.Location = new System.Drawing.Point(12, 104);
+            this.cbLogiciel.Location = new System.Drawing.Point(244, 50);
             this.cbLogiciel.Name = "cbLogiciel";
-            this.cbLogiciel.Size = new System.Drawing.Size(121, 21);
+            this.cbLogiciel.Size = new System.Drawing.Size(172, 21);
             this.cbLogiciel.TabIndex = 4;
             // 
             // cbVersion
             // 
             this.cbVersion.FormattingEnabled = true;
-            this.cbVersion.Location = new System.Drawing.Point(12, 157);
+            this.cbVersion.Location = new System.Drawing.Point(486, 50);
             this.cbVersion.Name = "cbVersion";
-            this.cbVersion.Size = new System.Drawing.Size(121, 21);
+            this.cbVersion.Size = new System.Drawing.Size(165, 21);
             this.cbVersion.TabIndex = 5;
             // 
             // Logiciel
             // 
             this.Logiciel.AutoSize = true;
             this.Logiciel.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Logiciel.Location = new System.Drawing.Point(16, 88);
+            this.Logiciel.Location = new System.Drawing.Point(241, 34);
             this.Logiciel.Name = "Logiciel";
             this.Logiciel.Size = new System.Drawing.Size(43, 13);
             this.Logiciel.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             this.Version.AutoSize = true;
             this.Version.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Version.Location = new System.Drawing.Point(14, 141);
+            this.Version.Location = new System.Drawing.Point(483, 34);
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(42, 13);
             this.Version.TabIndex = 7;
@@ -115,7 +115,7 @@
             // tbDescription
             // 
             this.tbDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescription.Location = new System.Drawing.Point(12, 463);
+            this.tbDescription.Location = new System.Drawing.Point(12, 410);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(245, 23);
             this.tbDescription.TabIndex = 8;
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 539);
+            this.ClientSize = new System.Drawing.Size(680, 496);
             this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.Version);
             this.Controls.Add(this.Logiciel);
