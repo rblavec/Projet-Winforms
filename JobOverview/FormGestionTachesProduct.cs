@@ -34,7 +34,7 @@ namespace JobOverview
 
         private void CbPers_SelectedValueChanged(object sender, EventArgs e)
         {
-            dgvTacheProd.DataSource = _listTachprod.Where((c => c.Login == cbPers.Text)).ToList();
+            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)).ToList();
         }
 
         private void DgvTacheProd_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -55,7 +55,7 @@ namespace JobOverview
         protected override void OnLoad(EventArgs e)
         {
             cbPers.DataSource = DALTache.GetPers().Select(a => a.Login).ToList();
-            cbLogiciel.DataSource = DALLogiciel.nomlogiciel();
+            cbLogiciel.DataSource = DALLogiciel.Codelogiciel();
             // cbVersion.DataSource = DALLogiciel.GetVers((string)cbLogiciel.SelectedValue);
             cbVersion.DataSource = DALLogiciel.listVersion((string)cbLogiciel.SelectedValue).Select(a => a.NumeroVersion).ToList();
 
@@ -78,8 +78,8 @@ namespace JobOverview
             //.Where(g => g.NumeroVersion == (float)cbVersion.SelectedValue).ToList();
             //dgvTacheProd.Columns["Login"].Visible = false;
             //dgvTacheProd.Columns["NumeroVersion"].Visible = false;
-            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.Text) && c.NumeroVersion == ((float)cbVersion.SelectedItem)).ToList();
-
+            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.SelectedItem)).ToList();
+            //&& c.NumeroVersion == ((float)cbVersion.SelectedItem)
 
             //dgvTacheProd.CurrentRow.DataBoundItem
 

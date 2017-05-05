@@ -119,6 +119,40 @@ namespace JobOverview
             return listeNomLogiciel;
         }
 
+        public static List<string> Codelogiciel()
+        {
+            var listeCodeLogiciel = new List<string>();
+
+            var connectString = Properties.Settings.Default.ProjetWinformsConnection;
+
+            // On écrit la requête SQL à exécuter
+            string queryString = "select distinct CodeLogiciel from jo.Logiciel order by 1";
+
+            // On crée une connexion à partir de la chaîne de connexion
+            using (var connect = new SqlConnection(connectString))
+            {
+                // On créé une commande à partir de la requête et la connexion définies précédemment
+                var command = new SqlCommand(queryString, connect);
+
+                // On ouvre la connexion
+                connect.Open();
+
+                // On exécute la requête en récupérant son résultat dans un objet SqlDataRedader
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    // On lit et on affiche les lignes de résultat en boucle
+                    while (reader.Read())
+                    {
+                        listeCodeLogiciel.Add((string)reader["CodeLogiciel"]);
+                    }
+                }
+
+            }
+            // Le fait d'avoir créé la connexion dans une instruction using permet de la fermer automatiquement à la fin du bloc using
+
+            return listeCodeLogiciel;
+        }
+
 
         public static BindingList<Module> listModule(string NomLogiciel)
         {
