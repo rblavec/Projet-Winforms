@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.cbPers = new System.Windows.Forms.ComboBox();
-            this.btAjouTache = new System.Windows.Forms.Button();
             this.dgvTacheProd = new System.Windows.Forms.DataGridView();
             this.cbLogiciel = new System.Windows.Forms.ComboBox();
             this.cbVersion = new System.Windows.Forms.ComboBox();
@@ -38,6 +37,7 @@
             this.Version = new System.Windows.Forms.Label();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.chk_termine = new System.Windows.Forms.CheckBox();
+            this.btAjouTache = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTacheProd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,16 +58,6 @@
             this.cbPers.Name = "cbPers";
             this.cbPers.Size = new System.Drawing.Size(169, 21);
             this.cbPers.TabIndex = 1;
-            // 
-            // btAjouTache
-            // 
-            this.btAjouTache.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAjouTache.Location = new System.Drawing.Point(12, 451);
-            this.btAjouTache.Name = "btAjouTache";
-            this.btAjouTache.Size = new System.Drawing.Size(137, 23);
-            this.btAjouTache.TabIndex = 2;
-            this.btAjouTache.Text = "Nouvelle Tache";
-            this.btAjouTache.UseVisualStyleBackColor = true;
             // 
             // dgvTacheProd
             // 
@@ -130,6 +120,16 @@
             this.chk_termine.Text = "Tâches terminées";
             this.chk_termine.UseVisualStyleBackColor = true;
             // 
+            // btAjouTache
+            // 
+            this.btAjouTache.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouTache.Location = new System.Drawing.Point(12, 451);
+            this.btAjouTache.Name = "btAjouTache";
+            this.btAjouTache.Size = new System.Drawing.Size(137, 23);
+            this.btAjouTache.TabIndex = 2;
+            this.btAjouTache.Text = "Nouvelle Tache";
+            this.btAjouTache.UseVisualStyleBackColor = true;
+            // 
             // FormGestionTachesProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,7 +157,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbPers;
-        private System.Windows.Forms.Button btAjouTache;
         private System.Windows.Forms.DataGridView dgvTacheProd;
         private System.Windows.Forms.ComboBox cbLogiciel;
         private System.Windows.Forms.ComboBox cbVersion;
@@ -165,5 +164,6 @@
         private System.Windows.Forms.Label Version;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.CheckBox chk_termine;
+        private System.Windows.Forms.Button btAjouTache;
     }
 }

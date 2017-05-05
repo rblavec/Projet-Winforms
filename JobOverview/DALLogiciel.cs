@@ -154,9 +154,9 @@ namespace JobOverview
         }
 
 
-        public static BindingList<Module> listModule(string NomLogiciel)
+        public static List <Module> listModule(string NomLogiciel)
         {
-            var listDeModule = new BindingList<Module>();
+            var listDeModule = new List <Module>();
 
             var connectString = Properties.Settings.Default.ProjetWinformsConnection;
 
@@ -193,7 +193,7 @@ namespace JobOverview
             return listDeModule;
         }
 
-        private static void GetModuleFromDataReader(BindingList<Module> lstModule, SqlDataReader reader)
+        private static void GetModuleFromDataReader(List <Module> lstModule, SqlDataReader reader)
         {
             //on créé un nouveau Module, on lui renseigne ses propriétés grâce au DataReader et on l'ajoute à notre collection.
             var mod = new Module();

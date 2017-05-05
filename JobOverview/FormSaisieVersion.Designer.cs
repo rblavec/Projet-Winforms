@@ -149,6 +149,7 @@
             this.Controls.Add(this.btn_OK);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "FormSaisieVersion";
+            this.ShowIcon = false;
             this.Text = "FormSaisieVersion";
             this.ResumeLayout(false);
             this.PerformLayout();

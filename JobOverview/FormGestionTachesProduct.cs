@@ -31,6 +31,7 @@ namespace JobOverview
             cbLogiciel.SelectedValueChanged += CbPers_SelectedValueChanged;
             cbVersion.SelectedValueChanged += CbPers_SelectedValueChanged;
             chk_termine.CheckedChanged += CbPers_SelectedValueChanged;
+            
         }
 
         private void CbPers_SelectedValueChanged(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace JobOverview
         #endregion
         private void BtAjouTache_Click(object sender, EventArgs e)
         {
-            using (FormSaisieTacheProd formSaisieTacheProd = new FormSaisieTacheProd())
+            using (FormSaisieTacheProd formSaisieTacheProd = new FormSaisieTacheProd((string)cbPers.SelectedValue, (string)cbLogiciel.SelectedValue, (float)cbVersion.SelectedValue))
             {
                 DialogResult dialog = formSaisieTacheProd.ShowDialog();
             }

@@ -140,5 +140,54 @@ namespace JobOverview
 
 
 
+
+        public static List<Activite> GetActivite()
+        {
+            List<Activite> listActivite = new List<Activite>();
+
+            var connectString = Properties.Settings.Default.ProjetWinformsConnection;
+            string queryString = @"select * from jo.Activite";
+
+            using (var connect = new SqlConnection(connectString))
+            {
+                var command = new SqlCommand(queryString, connect);
+
+                connect.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        GetActiviteFromDataReader(listActivite, reader);
+                    }
+                }
+            }
+
+            return listActivite;
+        }
+
+        private static void GetActiviteFromDataReader(List<Activite> listActivite, SqlDataReader reader)
+        {
+
+            //todo controle valeurs null à finir
+            var act = new Activite();
+
+
+            if (reader["CodeActivite"] != DBNull.Value)
+                act.CodeActivite = (string)reader["CodeActivite"];
+
+            if (reader["Libelle"] != DBNull.Value)
+                act.Libelle = (string)reader["Libelle"];
+
+            if (reader["Annexe"] != DBNull.Value)
+                act.Annexe = (bool)reader["Annexe"];
+            
+
+            listActivite.Add(act);
+
+        }
+
+
+
     }
 }

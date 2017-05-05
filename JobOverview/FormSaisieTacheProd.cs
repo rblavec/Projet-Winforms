@@ -15,14 +15,18 @@ namespace JobOverview
 
     {
 
+
         #region propriétés
         public Tache TacheProdSaisie { get; private set; }
         #endregion
 
 
-        public FormSaisieTacheProd()
+        public FormSaisieTacheProd(string pers, string log, float vers)
         {
             InitializeComponent();
+            cBox_module.DataSource = DALLogiciel.listModule(log).Select(c=>c.CodeModule).ToList();
+            cBox_Activité.DataSource = DALTache.GetActivite().Select(d => d.CodeActivite).ToList();
+            cBox_LibelleActivite.DataSource = DALTache.GetActivite().Select(g=>g.Libelle).ToList();
         }
 
 
@@ -57,10 +61,11 @@ namespace JobOverview
             base.OnClosing(e);
         }
 
+
+
+
+
         #endregion
-
-
-
 
 
     }

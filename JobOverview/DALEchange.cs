@@ -17,7 +17,7 @@ namespace JobOverview
             // On crée un sérialiseur, en spécifiant le type de l'objet à sérialiser, ici une list de commande et le nom de l'élément xml racine
             XmlSerializer serializer = new XmlSerializer(typeof(List<TacheProd>), new XmlRootAttribute("TachesProduction"));
 
-            using (StreamWriter streamW = new StreamWriter(@"D:\Fichiers cours\Projet\TachesProd.xml"))
+            using (StreamWriter streamW = new StreamWriter(@"TachesProd.xml"))
             {
                 serializer.Serialize(streamW, listTache);
             }
@@ -31,7 +31,7 @@ namespace JobOverview
             // On specifie le type d'objet qu'on va utiliser et le fichier racine.
             XmlSerializer deserializer = new XmlSerializer(typeof(List<TacheProd>), new XmlRootAttribute("TachesProduction"));
 
-            using (StreamReader streamW = new StreamReader(@"D:\Fichiers cours\Projet\TacheProduction.xml"))
+            using (StreamReader streamW = new StreamReader(@"TacheProduction.xml"))
             {
                 // Deserialize renvoie un type object, qu'il faut transtyper. 
                 listTache = (List<TacheProd>)deserializer.Deserialize(streamW);
