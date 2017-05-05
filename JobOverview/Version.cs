@@ -20,5 +20,7 @@ namespace JobOverview
         public DateTime DateSortieReelleVersion { get; set; }
 
         public Int16 NumeroRelease { get; set; }
+
+        public string CodeLogiciel { get; set; }
     }
 }

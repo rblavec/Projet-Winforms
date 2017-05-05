@@ -51,7 +51,7 @@ namespace JobOverview
 
         }
 
-   
+
 
         // On créé la méthode qui sera appellée lors du click sur le bouton de suppression de version.
         private void Btn_suppVersion_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace JobOverview
             _VersionSupprimé.Remove((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
             DALLogiciel.SupprimerVersion((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
             _Version.Remove((Version)dgv_ModulesVersions.CurrentRow.DataBoundItem);
-            
+
 
             // On rafraichi la liste.
             _Version = DALLogiciel.listVersion((string)cbox_logiciels.SelectedValue);
@@ -93,6 +93,7 @@ namespace JobOverview
                 }
 
             }
+
         }
 
         // On créé une méthode qui va nous permettre d'actualiser les DatagridView en fonction du nom de logiciel selectionné par l'utilisateur.
@@ -100,6 +101,15 @@ namespace JobOverview
         {
             dgv_ModulesVersions.DataSource = DALLogiciel.listVersion((string)cbox_logiciels.SelectedValue);
             dgv_modules.DataSource = DALLogiciel.listModule((string)cbox_logiciels.SelectedValue);
+        }
+
+
+        protected override void OnLoad(EventArgs e)
+        {
+
+            dgv_modules.DataSource = null;
+            dgv_ModulesVersions.DataSource = null;
+            base.OnLoad(e);
         }
     }
 }
