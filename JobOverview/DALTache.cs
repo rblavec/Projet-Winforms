@@ -68,9 +68,9 @@ namespace JobOverview
         ////////////////////////////////////////////////////////////////////////
         ///récupération des taches de l'équipe Dev Bio humaine
         /////////////////////////////////////////////////////////////////////////
-        public static BindingList<Tache> GetTache()
+        public static List <TacheProd> GetTache()
         {
-            BindingList<Tache> listTache = new BindingList<Tache>();
+            List<TacheProd> listTache = new List<TacheProd>();
 
             var connectString = Properties.Settings.Default.ProjetWinformsConnection;
             string queryString = @"select t.Libelle,t.Annexe,t.CodeActivite,t.Login,t.Description,tp.Numero,tp.DureePrevue,tp.DureeRestanteEstimee,
@@ -100,11 +100,11 @@ namespace JobOverview
             return listTache;
         }
 
-        private static void GetTacheFromDataReader(BindingList<Tache> listTache, SqlDataReader reader)
+        private static void GetTacheFromDataReader(List<TacheProd> listTache, SqlDataReader reader)
         {
 
             //todo controle valeurs null à finir
-            var tach = new Tache();
+            var tach = new TacheProd();
 
 
             if (reader["Libelle"] != DBNull.Value)
@@ -133,12 +133,12 @@ namespace JobOverview
             if (reader["NumeroVersion"] != DBNull.Value)
                 tach.NumeroVersion = (float)reader["NumeroVersion"];
 
-            if (reader["CodeLogicielVersion"] != DBNull.Value)
-                tach.CodeLogicielVersion = (string)reader["CodeLogicielVersion"];
-
 
             listTache.Add(tach);
 
         }
+
+
+
     }
 }

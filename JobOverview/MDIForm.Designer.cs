@@ -30,11 +30,13 @@
 		{
             this.menuGeneral = new System.Windows.Forms.MenuStrip();
             this.menuGestionVersionLogiciels = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDesVersionsDeLogicielsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GestionTache = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesTachesProductionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesTachesAnnexesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindows = new System.Windows.Forms.ToolStripMenuItem();
+            this.echangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +45,7 @@
             this.menuGeneral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuGestionVersionLogiciels,
             this.GestionTache,
+            this.echangeToolStripMenuItem,
             this.menuWindows});
             this.menuGeneral.Location = new System.Drawing.Point(0, 0);
             this.menuGeneral.Name = "menuGeneral";
@@ -52,16 +55,9 @@
             // 
             // menuGestionVersionLogiciels
             // 
-            this.menuGestionVersionLogiciels.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDesVersionsDeLogicielsToolStripMenuItem});
             this.menuGestionVersionLogiciels.Name = "menuGestionVersionLogiciels";
             this.menuGestionVersionLogiciels.Size = new System.Drawing.Size(188, 20);
             this.menuGestionVersionLogiciels.Text = "Gestion des versions de logiciels";
-            // 
-            // gestionDesVersionsDeLogicielsToolStripMenuItem
-            // 
-            this.gestionDesVersionsDeLogicielsToolStripMenuItem.Name = "gestionDesVersionsDeLogicielsToolStripMenuItem";
-            this.gestionDesVersionsDeLogicielsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             // 
             // GestionTache
             // 
@@ -71,12 +67,6 @@
             this.GestionTache.Name = "GestionTache";
             this.GestionTache.Size = new System.Drawing.Size(119, 20);
             this.GestionTache.Text = "Gestion des Taches";
-            // 
-            // menuWindows
-            // 
-            this.menuWindows.Name = "menuWindows";
-            this.menuWindows.Size = new System.Drawing.Size(63, 20);
-            this.menuWindows.Text = "Fenêtres";
             // 
             // gestionDesTachesProductionToolStripMenuItem
             // 
@@ -89,6 +79,33 @@
             this.gestionDesTachesAnnexesToolStripMenuItem.Name = "gestionDesTachesAnnexesToolStripMenuItem";
             this.gestionDesTachesAnnexesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.gestionDesTachesAnnexesToolStripMenuItem.Text = "Gestion des Taches Annexes";
+            // 
+            // menuWindows
+            // 
+            this.menuWindows.Name = "menuWindows";
+            this.menuWindows.Size = new System.Drawing.Size(63, 20);
+            this.menuWindows.Text = "Fenêtres";
+            // 
+            // echangeToolStripMenuItem
+            // 
+            this.echangeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importationToolStripMenuItem,
+            this.exportationToolStripMenuItem});
+            this.echangeToolStripMenuItem.Name = "echangeToolStripMenuItem";
+            this.echangeToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.echangeToolStripMenuItem.Text = "Echanges";
+            // 
+            // importationToolStripMenuItem
+            // 
+            this.importationToolStripMenuItem.Name = "importationToolStripMenuItem";
+            this.importationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importationToolStripMenuItem.Text = "Importation";
+            // 
+            // exportationToolStripMenuItem
+            // 
+            this.exportationToolStripMenuItem.Name = "exportationToolStripMenuItem";
+            this.exportationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportationToolStripMenuItem.Text = "Exportation";
             // 
             // MDIForm
             // 
@@ -113,9 +130,11 @@
 		private System.Windows.Forms.ToolStripMenuItem menuGestionVersionLogiciels;
 		private System.Windows.Forms.ToolStripMenuItem menuWindows;
 		private System.Windows.Forms.ToolStripMenuItem GestionTache;
-        private System.Windows.Forms.ToolStripMenuItem gestionDesVersionsDeLogicielsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesTachesProductionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesTachesAnnexesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem echangeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportationToolStripMenuItem;
     }
 }
 

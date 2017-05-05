@@ -15,8 +15,8 @@ namespace JobOverview
 
         #region variables privées
 
-        private BindingList<Tache> _listTachprod;
-        private BindingList<Tache> _listTach;
+        public static List<TacheProd> _listTachprod = new List<TacheProd>();
+        private List<TacheProd> _listTach;
         #endregion
 
         #region Constructeur
@@ -25,12 +25,21 @@ namespace JobOverview
         {
             InitializeComponent();
             btAjouTache.Click += BtAjouTache_Click;
-            _listTachprod = new BindingList<Tache>();
+
             dgvTacheProd.CellClick += DgvTacheProd_CellClick;
+            cbPers.SelectedValueChanged += CbPers_SelectedValueChanged;
+            cbLogiciel.SelectedValueChanged += CbPers_SelectedValueChanged;
+            cbVersion.SelectedValueChanged += CbPers_SelectedValueChanged;
+        }
+
+        private void CbPers_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dgvTacheProd.DataSource = _listTachprod.Where((c => c.Login == cbPers.Text)).ToList();
         }
 
         private void DgvTacheProd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             tbDescription.Text = ((Tache)dgvTacheProd.CurrentRow.DataBoundItem).Description;
         }
 
@@ -47,21 +56,29 @@ namespace JobOverview
         {
             cbPers.DataSource = DALTache.GetPers().Select(a => a.Login).ToList();
             cbLogiciel.DataSource = DALLogiciel.nomlogiciel();
-           // cbVersion.DataSource = DALLogiciel.GetVers((string)cbLogiciel.SelectedValue);
-            cbVersion.DataSource = DALLogiciel.listVersion((string)cbLogiciel.SelectedValue).Select(a=>a.NumeroVersion).ToList();
+            // cbVersion.DataSource = DALLogiciel.GetVers((string)cbLogiciel.SelectedValue);
+            cbVersion.DataSource = DALLogiciel.listVersion((string)cbLogiciel.SelectedValue).Select(a => a.NumeroVersion).ToList();
 
             //foreach (var t in _listTach.Where(t => t.Annexe == false))
             //    _listTachprod.Add(t);
 
             //dgvTacheProd.DataSource = _listTachprod;
-            
 
-            _listTach = DALTache.GetTache();
-            dgvTacheProd.DataSource = _listTach;
-            dgvTacheProd.Columns["Annexe"].Visible = false;
-            dgvTacheProd.Columns["Login"].Visible = false;
-            dgvTacheProd.Columns["NumeroVersion"].Visible = false;
-            dgvTacheProd.Columns["CodeLogicielVersion"].Visible = false;
+
+
+            foreach (var a in DALTache.GetTache())
+            {
+                _listTachprod.Add(a);
+            }
+
+
+            //dgvTacheProd.DataSource = _listTachprod;
+            //dgvTacheProd.DataSource = ((((_listTachprod.Where((c=>c.Login == cbPers.Text))).Where(d => d.CodeLogicieModule == cbLogiciel.Text)).Where( g =>g.NumeroVersion.ToString() == cbVersion.Text)));
+            //dgvTacheProd.DataSource = ((_listTachprod.Where(m => m.Login == cbPers.SelectedValue.ToString())).Where(n => n.CodeLogicieModule == cbLogiciel.SelectedValue)).ToList();
+            //.Where(g => g.NumeroVersion == (float)cbVersion.SelectedValue).ToList();
+            //dgvTacheProd.Columns["Login"].Visible = false;
+            //dgvTacheProd.Columns["NumeroVersion"].Visible = false;
+            dgvTacheProd.DataSource = _listTachprod.Where(c => c.Login == (cbPers.Text) && c.CodeLogicieModule == ((string)cbLogiciel.Text) && c.NumeroVersion == ((float)cbVersion.SelectedItem)).ToList();
 
 
             //dgvTacheProd.CurrentRow.DataBoundItem
@@ -73,12 +90,12 @@ namespace JobOverview
             //    _listTachprod.Add(t);
 
             //dgvTacheProd.DataSource = _listTachprod;
-            tbDescription.Text = ((Tache)dgvTacheProd.CurrentRow.DataBoundItem).Description;
+            //tbDescription.Text = ((Tache)dgvTacheProd.CurrentRow.DataBoundItem).Description;
 
             base.OnLoad(e);
         }
 
-      
+
 
 
 

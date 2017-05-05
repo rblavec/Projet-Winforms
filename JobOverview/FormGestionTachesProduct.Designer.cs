@@ -61,7 +61,7 @@
             // btAjouTache
             // 
             this.btAjouTache.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAjouTache.Location = new System.Drawing.Point(12, 386);
+            this.btAjouTache.Location = new System.Drawing.Point(12, 504);
             this.btAjouTache.Name = "btAjouTache";
             this.btAjouTache.Size = new System.Drawing.Size(137, 23);
             this.btAjouTache.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.dgvTacheProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTacheProd.Location = new System.Drawing.Point(12, 197);
             this.dgvTacheProd.Name = "dgvTacheProd";
-            this.dgvTacheProd.Size = new System.Drawing.Size(755, 102);
+            this.dgvTacheProd.Size = new System.Drawing.Size(755, 260);
             this.dgvTacheProd.TabIndex = 3;
             // 
             // cbLogiciel
@@ -115,7 +115,7 @@
             // tbDescription
             // 
             this.tbDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescription.Location = new System.Drawing.Point(15, 327);
+            this.tbDescription.Location = new System.Drawing.Point(12, 463);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(245, 23);
             this.tbDescription.TabIndex = 8;
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 421);
+            this.ClientSize = new System.Drawing.Size(779, 539);
             this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.Version);
             this.Controls.Add(this.Logiciel);
